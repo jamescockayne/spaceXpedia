@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Countdown from '../Countdown/Countdown';
 import LaunchInformation from '../LaunchInformation/LaunchInformation';
-import SearchBar from '../SearchBar/SearchBar';
+import NavBar from '../NavBar/NavBar';
 
 class App extends Component {
   constructor(props){
@@ -38,7 +38,7 @@ class App extends Component {
       <div className="App">
         <Countdown />
         <LaunchInformation />
-        <SearchBar onMissionSearchClick={this.onMissionSearchClick}
+        <NavBar onMissionSearchClick={this.onMissionSearchClick}
                    onCoresSearchClick={this.onCoresSearchClick}
                    onPayloadsSearchClick={this.onPayloadsSearchClick}
                    onUpcomingSearchClick={this.onUpcomingSearchClick}

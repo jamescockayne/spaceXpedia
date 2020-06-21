@@ -1,4 +1,4 @@
-.search-bar-container {
+.nav-bar-container {
   height: 15vh;
   background-color: #272727;
   display: grid;
@@ -7,7 +7,7 @@
 }
 
 @media (min-width: 550px) {
-  .search-bar-container { grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(1, 1fr); }
+  .nav-bar-container { grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(1, 1fr); }
 }
 
 button {
