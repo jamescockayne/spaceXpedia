@@ -1,9 +1,13 @@
 .search-bar-container {
   height: 15vh;
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: 1fr;
   background-color: #272727;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+@media (min-width: 550px) {
+  .search-bar-container { grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(1, 1fr); }
 }
 
 button {
