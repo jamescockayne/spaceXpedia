@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../styles/Countdown.css';
 
 class Countdown extends Component {
   constructor(props){
@@ -13,7 +14,13 @@ class Countdown extends Component {
   render(){
     return(
       <section id='countdown'>
-        <h1>Lift-off in {this.state.tMinusTime}</h1>
+        <div className='countdown-container'>
+          <div className='display-container'>
+            <div className='launch-name c-element'>{this.state.nameOfNextLaunch}</div>
+            <div className='t-minus c-element'>{this.state.tMinusTime}</div>
+            <div className='launch-date c-element'>The launch is on a date at 00:00 UTC</div>
+          </div>
+        </div>
       </section>
     )
   }
