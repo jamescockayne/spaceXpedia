@@ -1,0 +1,11 @@
+.mission-card {
+  background-color: rgba(128,128,128,0.3);
+  border: 2px solid gray;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-title-container {
+  border-top: 2px solid black;
+  padding-top: 5px;
+}

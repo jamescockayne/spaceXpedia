@@ -2,7 +2,6 @@ import React from 'react';
 import '../../styles/NavBar.css';
 
 const NavBar = ({ onMissionSearchClick, onCoresSearchClick, onPayloadsSearchClick, onUpcomingSearchClick, currentView }) => {
-console.log(`i can see the current view is ${currentView}`);
   return (
     <section id='nav-bar'>
       <div className='nav-bar-container'>

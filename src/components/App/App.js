@@ -3,6 +3,7 @@ import './App.css';
 import Countdown from '../Countdown/Countdown';
 import LaunchInformation from '../LaunchInformation/LaunchInformation';
 import NavBar from '../NavBar/NavBar';
+import CardBoard from '../CardBoard/CardBoard';
 
 class App extends Component {
   constructor(props){
@@ -33,7 +34,6 @@ class App extends Component {
   }
 
   render(){
-    console.log(this.state);
     return (
       <div className="App">
         <Countdown />
@@ -45,6 +45,7 @@ class App extends Component {
                    currentView={this.state.viewMode}
         />
         <h1>Test. Selected view: {this.state.viewMode}</h1>
+        <CardBoard currentView={this.state.viewMode}/>
       </div>
     )
   }
