@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import ScrollIntoView from 'react-scroll-into-view';
 import '../../styles/Countdown.css';
+import ScrollDownArrow from '../ScrollDownArrow/ScrollDownArrow';
+import 'tachyons';
 
 class Countdown extends Component {
   constructor(props){
@@ -24,7 +27,15 @@ class Countdown extends Component {
             </div>
             <div className='launch-date c-element'>The launch is on a date at 00:00 UTC</div>
           </div>
+
+          <div>
+            <ScrollIntoView selector='#launch-info'>
+              <ScrollDownArrow />
+            </ScrollIntoView>
+          </div>
+          
         </div>
+
       </section>
     )
   }
