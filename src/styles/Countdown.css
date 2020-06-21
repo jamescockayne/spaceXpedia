@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('../fonts/countdown/VCROSD.woff2') format('woff2'),
+        url('../fonts/countdown/VCROSD.woff') format('woff'),
+        url('../fonts/countdown/VCROSD.ttf') format('truetype');
+}
+
+
 .countdown-container {
   height: 100vh;
   padding: 0px 5vw;
@@ -16,17 +24,23 @@
 
 .c-element {
   padding: 10px 0px;
+  font-family: 'Arial';
   font-size: 3vh;
-  font-weight: 900;
-  font-family: cursive;
-  background-color: rgb(255, 0, 0);
+  color: white;
 }
 
-
+.border {
+  padding: 20px 20px;
+  border: 5px solid white;
+  border-radius: 1rem
+}
 
 .t-minus {
+  font-family: 'VCR OSD Mono';
+  font-weight: 900;
   width: 90vw;
-  font-size: 6vh;
+  font-size: 8vw;
+
 }
 
 .launch-date {
