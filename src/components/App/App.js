@@ -4,6 +4,8 @@ import Countdown from '../Countdown/Countdown';
 import LaunchInformation from '../LaunchInformation/LaunchInformation';
 import NavBar from '../NavBar/NavBar';
 import CardBoard from '../CardBoard/CardBoard';
+import ViewWindow from '../ViewWindow/ViewWindow';
+import SearchBar from '../SearchBar/SearchBar';
 
 class App extends Component {
   constructor(props){
@@ -44,8 +46,10 @@ class App extends Component {
                    onUpcomingSearchClick={this.onUpcomingSearchClick}
                    currentView={this.state.viewMode}
         />
-        <h1>Test. Selected view: {this.state.viewMode}</h1>
-        <CardBoard currentView={this.state.viewMode}/>
+        <SearchBar />
+        <ViewWindow>
+          <CardBoard currentView={this.state.viewMode}/>
+        </ViewWindow>
       </div>
     )
   }
