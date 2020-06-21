@@ -1,0 +1,42 @@
+.search-bar-container {
+  height: 15vh;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1fr;
+  background-color: #272727;
+}
+
+button {
+  height: 100%;
+  width: -webkit-fill-available;
+  background-color: rgba(128,128,128,0.3);
+  font-weight: 600;
+  font-size: 3vw;
+  color: white;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  border: 0px solid transparent;
+  outline: 0;
+}
+
+.active {
+  background-color: white;
+  color: black;
+
+}
+
+.active:hover{
+}
+
+.notActive {
+  background-color: rgba(128,128,128,0.3);
+  transition: background-color, 0.5s
+}
+
+.notActive:hover {
+  background-color: white;
+  color: black;
+  transition: background-color, 0.2s, color, 0.2s;
+  transition-timing-function: ease-in;
+
+}

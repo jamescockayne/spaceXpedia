@@ -1,6 +1,6 @@
 .launch-info-container {
   background-color: black;
-  padding: 5vh 0vw;
+  padding: 10vh 0vw;
   margin: 0px 0px;
   color: white;
   font-weight: 300;
@@ -45,7 +45,7 @@ img {
   padding: 2vh 2vw;
 
   margin: 1vh 1vw;
-    margin-bottom: 2vh;
+  margin-bottom: 2vh;
   overflow: hidden scroll;
 }
 
