@@ -20,6 +20,7 @@ class App extends Component {
   }
 
   onMissionSearchClick = (event) => {
+    console.log(event);
     this.setState({viewMode: 'missions'});
   }
 
