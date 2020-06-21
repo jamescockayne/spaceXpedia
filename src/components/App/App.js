@@ -12,15 +12,70 @@ class App extends Component {
     super(props);
     this.state = {
       viewMode: 'missions',
+      names: [],
+      launch_sites: [],
+      patchUrls: [],
+      datesUNIX: [],
+      details: [],
+      videoUrls: [],
+      primary_payloads: [],
+      orbits: [],
+      payload_masses: [],
+      success: [],
     }
   }
 
   componentDidMount(){
     console.log('App successfully mounted!');
+    this.buildDatabase().then((a)=>console.log(this.state.names[31]));
+
   }
 
+
+  buildDatabase = async () => {
+    try{
+      let r = await this.fetchLaunchData();
+      let names = r.map(e=>e.mission_name);
+      let launch_sites = r.map(e=>e.launch_site.site_name_long);
+      let patchUrls = r.map(e=>e.links.mission_patch_small);
+      let datesUNIX = r.map(e=>e.launch_date_unix);
+      let details = r.map(e=>e.details);
+      let videoUrls = r.map(e=>e.links.video_link);
+      let primary_payloads = r.map(e=>e.rocket.second_stage.payloads[0].payload_id);
+      let orbits = r.map(e=>e.rocket.second_stage.payloads[0].orbit);
+      let payload_masses = r.map(e=>e.rocket.second_stage.payloads[0].payload_mass_kg);
+      let success = r.map(e=>e.launch_success);
+
+      this.setState({
+        names: names,
+        launch_sites: launch_sites,
+        patchUrls: patchUrls,
+        datesUNIX: datesUNIX,
+        details: details,
+        videoUrls: videoUrls,
+        primary_payloads: primary_payloads,
+        orbits: orbits,
+        payload_masses: payload_masses,
+        success: success,
+
+      });
+    } catch (err) {console.log('Looks like somethings wrong...',err)}
+
+
+
+
+  }
+
+
+  fetchLaunchData = async () => {
+    const response = await fetch('https://api.spacexdata.com/v3/launches/past');
+    const data = await response.json();
+    return data;
+  }
+
+
   onMissionSearchClick = (event) => {
-    console.log(event);
+    console.log();
     this.setState({viewMode: 'missions'});
   }
 
@@ -37,6 +92,7 @@ class App extends Component {
   }
 
   render(){
+
     return (
       <div className="App">
         <Countdown />
