@@ -1,0 +1,19 @@
+.countdown-container {
+  height: 100vh;
+  padding-left: 5vw;
+
+  background-color: #75d6a4;
+}
+
+.display-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.c-element {
+  padding: 10px 10px;
+  background-color: rgb(255, 0, 0);
+}
