@@ -11,6 +11,7 @@ class Countdown extends Component {
       nameOfNextLaunch: 'Loading...',
       nextLaunchTimeUnix: 'Loading...',
       tMinusTime: 'Loading...',
+      dateString: 'Loading...',
     }
   }
 
@@ -25,7 +26,7 @@ class Countdown extends Component {
                 {this.state.tMinusTime}
               </span>
             </div>
-            <div className='launch-date c-element'>The launch is on a date at 00:00 UTC</div>
+            <div className='launch-date c-element'>The launch is: {this.state.dateString}</div>
           </div>
 
           <div>
@@ -33,7 +34,7 @@ class Countdown extends Component {
               <ScrollDownArrow />
             </ScrollIntoView>
           </div>
-          
+
         </div>
 
       </section>
@@ -45,9 +46,11 @@ class Countdown extends Component {
     console.log(`Countdown component mounted successfully!`);
     const data = this.fetchLaunchData();
 
+
     // When the data is recieved, update the state...
     data.then(result => {
-    this.setState({nameOfNextLaunch: result.mission_name, nextLaunchTimeUnix: result.launch_date_unix});
+    let date = new Date(result.launch_date_unix*1000);
+    this.setState({nameOfNextLaunch: result.mission_name, nextLaunchTimeUnix: result.launch_date_unix, dateString: date.toString(),});
       }).catch(e=>console.log(e));
 
     // ...and then continuusly work out the 't-minus' time to launch, updating the state everytime it changes

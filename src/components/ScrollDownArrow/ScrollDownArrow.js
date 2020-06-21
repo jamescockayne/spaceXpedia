@@ -5,10 +5,10 @@ import '../../styles/ScrollDownArrow.css';
 const ScrollDownArrow = () => {
   return(
     <div className='scroll-master'>
-      <div class="scroll-container">
-      <div class="chevron"></div>
-      <div class="chevron"></div>
-      <div class="chevron"></div>
+      <div className="scroll-container">
+      <div className="chevron"></div>
+      <div className="chevron"></div>
+      <div className="chevron"></div>
       </div>
     </div>
   )
