@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/spaceXpedia/static/css/main.083a4c8b.chunk.css",
+    "main.js": "/spaceXpedia/static/js/main.35f381a9.chunk.js",
+    "main.js.map": "/spaceXpedia/static/js/main.35f381a9.chunk.js.map",
+    "runtime-main.js": "/spaceXpedia/static/js/runtime-main.35a29c35.js",
+    "runtime-main.js.map": "/spaceXpedia/static/js/runtime-main.35a29c35.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/spaceXpedia/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.47400c52.chunk.js": "/spaceXpedia/static/js/2.47400c52.chunk.js",
+    "static/js/2.47400c52.chunk.js.map": "/spaceXpedia/static/js/2.47400c52.chunk.js.map",
+    "index.html": "/spaceXpedia/index.html",
+    "precache-manifest.ff20374d20bf59442959315975519a3b.js": "/spaceXpedia/precache-manifest.ff20374d20bf59442959315975519a3b.js",
+    "service-worker.js": "/spaceXpedia/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/spaceXpedia/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.083a4c8b.chunk.css.map": "/spaceXpedia/static/css/main.083a4c8b.chunk.css.map",
+    "static/js/2.47400c52.chunk.js.LICENSE.txt": "/spaceXpedia/static/js/2.47400c52.chunk.js.LICENSE.txt",
+    "static/media/Countdown.css": "/spaceXpedia/static/media/rocketBackground.d5258c14.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35a29c35.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.47400c52.chunk.js",
+    "static/css/main.083a4c8b.chunk.css",
+    "static/js/main.35f381a9.chunk.js"
+  ]
+}
