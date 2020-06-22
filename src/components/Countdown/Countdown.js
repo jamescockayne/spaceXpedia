@@ -17,7 +17,7 @@ class Countdown extends Component {
 
   render(){
     return(
-      <section id='countdown'>
+      <section id='countdown' className='scroll-child'>
         <div className='countdown-container'>
           <div className='display-container'>
             <div className='launch-name c-element'>{this.state.nameOfNextLaunch}</div>

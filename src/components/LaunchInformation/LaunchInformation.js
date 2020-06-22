@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/LaunchInformation.css';
+import '../App/App.css';
 
 class LaunchInformation extends Component {
   constructor(props){
@@ -18,7 +19,7 @@ class LaunchInformation extends Component {
 
   render(){
     return(
-      <section id='launch-info'>
+      <section id='launch-info' className='scroll-child'>
         <div className='launch-info-container'>
 
           <div className='info-display-container'>

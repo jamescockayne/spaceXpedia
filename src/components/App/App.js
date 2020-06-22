@@ -98,7 +98,7 @@ class App extends Component {
 
   render(){
   return (
-    <div className="App">
+    <div className="App scroll-parent">
       <Countdown />
       <LaunchInformation />
       <NavBar onMissionSearchClick={this.onMissionSearchClick}

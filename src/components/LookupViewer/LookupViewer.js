@@ -13,7 +13,11 @@ const LookupViewer = (props) => {
     )
   }
   else{
-    return <DetailWindow />
+    return (
+      <ViewWindow>
+        <DetailWindow database={props.database}/>
+      </ViewWindow>
+    )
   }
 }
 

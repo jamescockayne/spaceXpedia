@@ -3,7 +3,7 @@ import '../../styles/NavBar.css';
 
 const NavBar = ({ onMissionSearchClick, onCoresSearchClick, onPayloadsSearchClick, onUpcomingSearchClick, currentView }) => {
   return (
-    <section id='nav-bar'>
+    <section id='nav-bar' className='scroll-child'>
       <div className='nav-bar-container'>
       <button id='missions' className={(currentView==='missions')?'active':'notActive'} onClick={onMissionSearchClick}>Missions</button>
         <button id='cores' className={(currentView==='cores')?'active':'notActive'} onClick={onCoresSearchClick}>Cores</button>
