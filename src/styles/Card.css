@@ -11,6 +11,10 @@
   color: white;
 }
 
+.card-image {
+  width: 230px;
+}
+
 @media (max-width: 550px) {
   .card-image {
     max-width: 60vw;
