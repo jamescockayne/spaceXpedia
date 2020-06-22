@@ -2,14 +2,15 @@ import React from 'react';
 import 'tachyons';
 import '../../styles/Card.css'
 
-const MissionCard = ({ photoLink, missionName, id}) => {
+const MissionCard = ({ photoLink, missionName, id, missionClick}) => {
+  let buttonId = id;
   return (
-    <div key={id} id={id} className = 'mission-card grow tc dib br4 pa3 ma2 bw2 shadow-5'>
+    <div key={buttonId} id={buttonId} className = 'mission-card grow tc dib br4 pa3 ma2 bw2 shadow-5'>
       <div>
         <img src = {photoLink} alt = 'missionName' />
       </div>
       <div className='card-title-container'>
-        {missionName}
+        <button id={buttonId} onClick={() => missionClick(buttonId)}> {missionName} </button>
       </div>
     </div>
   )

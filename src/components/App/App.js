@@ -6,12 +6,15 @@ import NavBar from '../NavBar/NavBar';
 import CardBoard from '../CardBoard/CardBoard';
 import ViewWindow from '../ViewWindow/ViewWindow';
 import SearchBar from '../SearchBar/SearchBar';
+import LookupViewer from '../LookupViewer/LookupViewer';
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
       viewMode: 'missions',
+      isInfoView: false,
+      missionRequested: '',
       names: [],
       launch_sites: [],
       patchUrls: [],
@@ -27,7 +30,7 @@ class App extends Component {
 
   componentDidMount(){
     console.log('App successfully mounted!');
-    this.buildDatabase().then((a)=>console.log(this.state.names[31]));
+    this.buildDatabase();
 
   }
 
@@ -75,41 +78,43 @@ class App extends Component {
 
 
   onMissionSearchClick = (event) => {
-    console.log();
-    this.setState({viewMode: 'missions'});
+    this.setState({viewMode: 'missions', isInfoView: false});
   }
 
   onCoresSearchClick = (event) => {
-    this.setState({viewMode: 'cores'});
+    this.setState({viewMode: 'cores', isInfoView: false});
   }
 
   onPayloadsSearchClick = (event) => {
-    this.setState({viewMode: 'payloads'});
+    this.setState({viewMode: 'payloads', isInfoView: false});
   }
 
   onUpcomingSearchClick = (event) => {
-    this.setState({viewMode: 'upcoming'});
+    this.setState({viewMode: 'upcoming', isInfoView: false});
+  }
+
+  missionClick = (id) => {
+    this.setState({missionRequested: id, isInfoView: true});
+    console.log(id, this.state.isInfoView);
   }
 
   render(){
+  return (
+    <div className="App">
+      <Countdown />
+      <LaunchInformation />
+      <NavBar onMissionSearchClick={this.onMissionSearchClick}
+                 onCoresSearchClick={this.onCoresSearchClick}
+                 onPayloadsSearchClick={this.onPayloadsSearchClick}
+                 onUpcomingSearchClick={this.onUpcomingSearchClick}
+                 currentView={this.state.viewMode}
+      />
+      <SearchBar />
+      <LookupViewer viewMode={this.state.viewMode} missionClick={this.missionClick} isInfoView={this.state.isInfoView}/>
+    </div>
+  )
+}
 
-    return (
-      <div className="App">
-        <Countdown />
-        <LaunchInformation />
-        <NavBar onMissionSearchClick={this.onMissionSearchClick}
-                   onCoresSearchClick={this.onCoresSearchClick}
-                   onPayloadsSearchClick={this.onPayloadsSearchClick}
-                   onUpcomingSearchClick={this.onUpcomingSearchClick}
-                   currentView={this.state.viewMode}
-        />
-        <SearchBar />
-        <ViewWindow>
-          <CardBoard currentView={this.state.viewMode}/>
-        </ViewWindow>
-      </div>
-    )
-  }
 }
 
 export default App;
