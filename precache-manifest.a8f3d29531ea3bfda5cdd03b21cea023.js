@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0a3e510d5ef0f76cb1f58624cfff569c",
+    "revision": "c2091a1d9f293dd0604faeef06691cbc",
     "url": "/spaceXpedia/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spaceXpedia/static/css/2.3c03f26f.chunk.css"
   },
   {
-    "revision": "0fbb059ff31ca80b7dde",
-    "url": "/spaceXpedia/static/css/main.d19f6012.chunk.css"
+    "revision": "8ade41306b9747f33e2e",
+    "url": "/spaceXpedia/static/css/main.734aff3c.chunk.css"
   },
   {
     "revision": "fc2a8db4dbd8176aaee7",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spaceXpedia/static/js/2.ab3864f7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0fbb059ff31ca80b7dde",
-    "url": "/spaceXpedia/static/js/main.83aaebd8.chunk.js"
+    "revision": "8ade41306b9747f33e2e",
+    "url": "/spaceXpedia/static/js/main.b1041b91.chunk.js"
   },
   {
     "revision": "1d037b93dd419c1d5760",
