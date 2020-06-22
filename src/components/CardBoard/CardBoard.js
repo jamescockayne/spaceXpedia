@@ -16,11 +16,8 @@ const CardBoard = (props) => {
           }
           return missions.map((e,i)=><MissionCard id={i} key={i} resourceClick={props.resourceClick} missionName={e[0]} photoLink={e[1]}/>);
 
-        case 'cores':
-          return <h1>No Data...</h1>
-
         default:
-          return 'hello';
+          return 'Coming Soon!';
       }
   }
 

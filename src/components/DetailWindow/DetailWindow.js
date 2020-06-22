@@ -7,7 +7,7 @@ const DetailWindow = () => {
   return (
   <section id='detail-screen'>
     <div className='detail-window-container'>
-      <h1>This is the detail view.</h1>
+      This is the detail view.
     </div>
   </section>
 

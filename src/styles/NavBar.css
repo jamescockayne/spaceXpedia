@@ -1,5 +1,5 @@
 .nav-bar-container {
-  height: 15vh;
+  height: 13vh;
   background-color: #272727;
   display: grid;
   grid-template-columns: repeat(2,1fr);
