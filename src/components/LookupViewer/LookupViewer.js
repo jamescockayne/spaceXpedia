@@ -1,25 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CardBoard from '../CardBoard/CardBoard';
 import ViewWindow from '../ViewWindow/ViewWindow';
 import DetailWindow from '../DetailWindow/DetailWindow';
 
-class LookupViewer extends Component {
-  constructor(props){
-    super(props);
-  }
+const LookupViewer = (props) => {
 
-  render(){
-
-  if (this.props.isInfoView === false){
+  if (props.database.isInfoView === false){
     return (
       <ViewWindow>
-        <CardBoard currentView={this.props.viewMode} resourceClick={this.props.resourceClick}/>
+        <CardBoard database={props.database} resourceClick={props.resourceClick}/>
       </ViewWindow>
     )
   }
   else{
     return <DetailWindow />
-  }
   }
 }
 

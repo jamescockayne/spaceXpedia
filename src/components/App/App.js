@@ -60,6 +60,7 @@ class App extends Component {
         success: success,
 
       });
+      console.log('database built correctly!');
     } catch (err) {console.log('Looks like somethings wrong...',err)}
 
 
@@ -93,7 +94,6 @@ class App extends Component {
 
   resourceClick = (id) => {
     this.setState({resourceRequested: id, isInfoView: true});
-    console.log(id, this.state.isInfoView);
   }
 
   render(){
@@ -108,7 +108,7 @@ class App extends Component {
                  currentView={this.state.viewMode}
       />
       <SearchBar />
-      <LookupViewer viewMode={this.state.viewMode} resourceClick={this.resourceClick} isInfoView={this.state.isInfoView}/>
+      <LookupViewer database={this.state} resourceClick={this.resourceClick}/>
     </div>
   )
 }
