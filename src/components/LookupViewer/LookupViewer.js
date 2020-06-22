@@ -13,7 +13,7 @@ class LookupViewer extends Component {
   if (this.props.isInfoView === false){
     return (
       <ViewWindow>
-        <CardBoard currentView={this.props.viewMode} missionClick={this.props.missionClick}/>
+        <CardBoard currentView={this.props.viewMode} resourceClick={this.props.resourceClick}/>
       </ViewWindow>
     )
   }

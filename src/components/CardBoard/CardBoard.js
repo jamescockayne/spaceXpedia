@@ -45,7 +45,7 @@ class CardBoard extends Component {
     switch (this.props.currentView){
       case 'missions':
         return this.state.missions
-                  .map((e,i)=><MissionCard key={i} id={i} missionClick={this.props.missionClick} missionName={e[0]} photoLink={e[1]}/>)
+                  .map((e,i)=><MissionCard key={i} id={i} resourceClick={this.props.resourceClick} missionName={e[0]} photoLink={e[1]}/>)
       case 'cores':
       return <h1>No Data...</h1>
 

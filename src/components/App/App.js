@@ -3,8 +3,6 @@ import './App.css';
 import Countdown from '../Countdown/Countdown';
 import LaunchInformation from '../LaunchInformation/LaunchInformation';
 import NavBar from '../NavBar/NavBar';
-import CardBoard from '../CardBoard/CardBoard';
-import ViewWindow from '../ViewWindow/ViewWindow';
 import SearchBar from '../SearchBar/SearchBar';
 import LookupViewer from '../LookupViewer/LookupViewer';
 
@@ -14,7 +12,7 @@ class App extends Component {
     this.state = {
       viewMode: 'missions',
       isInfoView: false,
-      missionRequested: '',
+      resourceRequested: '',
       names: [],
       launch_sites: [],
       patchUrls: [],
@@ -93,8 +91,8 @@ class App extends Component {
     this.setState({viewMode: 'upcoming', isInfoView: false});
   }
 
-  missionClick = (id) => {
-    this.setState({missionRequested: id, isInfoView: true});
+  resourceClick = (id) => {
+    this.setState({resourceRequested: id, isInfoView: true});
     console.log(id, this.state.isInfoView);
   }
 
@@ -110,7 +108,7 @@ class App extends Component {
                  currentView={this.state.viewMode}
       />
       <SearchBar />
-      <LookupViewer viewMode={this.state.viewMode} missionClick={this.missionClick} isInfoView={this.state.isInfoView}/>
+      <LookupViewer viewMode={this.state.viewMode} resourceClick={this.resourceClick} isInfoView={this.state.isInfoView}/>
     </div>
   )
 }
