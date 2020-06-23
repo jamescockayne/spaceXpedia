@@ -4,23 +4,22 @@ import '../../styles/DetailWindow.css';
 
 const DetailWindow = (props) => {
 
-  let database = props.database;
-  let requestedResource = database.resourceRequested;
-  let date = new Date(database.datesUNIX[requestedResource]*1000);
-  console.log(database);
+
+  let requestedRecord = props.state.database[props.state.resourceRequested];
+  let date = new Date(requestedRecord.date*1000).toGMTString();
 
   return (
 
   <section id='detail-screen'>
     <div className='detail-window-container'>
 
-      <img src={database.patchUrls[requestedResource]} alt='Mission Patch' /><br/>
-      Mission: {database.names[requestedResource]} <br/>
-      Launch Site: {database.launch_sites[requestedResource]}<br/>
-      Date: {date.toGMTString()}<br/>
-      Details: {database.details[requestedResource]} <br/>
-      Link: <a href={database.videoUrls[requestedResource]} target="_blank" rel="noopener noreferrer">Video link</a> <br/>
-      Orbit: {database.orbits[requestedResource]}<br/>
+      <img src={requestedRecord.patchUrl} alt='Mission Patch' /><br/>
+      Mission: {requestedRecord.name} <br/>
+      Launch Site: {requestedRecord.launchSite}<br/>
+      Date: {date}<br/>
+      Details: {requestedRecord.details} <br/>
+      Link: <a href={requestedRecord.videoUrl} target="_blank" rel="noopener noreferrer">Video link</a> <br/>
+      Orbit: {requestedRecord.orbit}<br/>
 
     </div>
   </section>
