@@ -5,17 +5,17 @@ import DetailWindow from '../DetailWindow/DetailWindow';
 
 const LookupViewer = (props) => {
 
-  if (props.database.isInfoView === false){
+  if (props.allData.isInfoView === false){
     return (
       <ViewWindow>
-        <CardBoard database={props.database} resourceClick={props.resourceClick}/>
+        <CardBoard state={props.allData} resourceClick={props.resourceClick}/>
       </ViewWindow>
     )
   }
   else{
     return (
       <ViewWindow>
-        <DetailWindow database={props.database}/>
+       <DetailWindow state={props.allData}/>
       </ViewWindow>
     )
   }

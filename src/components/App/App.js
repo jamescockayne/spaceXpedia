@@ -9,28 +9,19 @@ import LookupViewer from '../LookupViewer/LookupViewer';
 class App extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       viewMode: 'missions',
+      database: [],
       isInfoView: false,
       resourceRequested: '',
-      names: [],
-      filteredNames: [],
-      launch_sites: [],
-      patchUrls: [],
-      datesUNIX: [],
-      details: [],
-      videoUrls: [],
-      primary_payloads: [],
-      orbits: [],
-      payload_masses: [],
-      success: [],
+      filteredDatabase: [],
     }
   }
 
   componentDidMount(){
     console.log('App successfully mounted!');
     this.buildDatabase();
-
   }
 
 
@@ -38,7 +29,6 @@ class App extends Component {
     try{
       let r = await this.fetchLaunchData();
       let names = r.map(e=>e.mission_name);
-      let key = r.map((e,i)=>i);
       let launch_sites = r.map(e=>e.launch_site.site_name_long);
       let patchUrls = r.map(e=>e.links.mission_patch_small);
       let datesUNIX = r.map(e=>e.launch_date_unix);
@@ -49,21 +39,26 @@ class App extends Component {
       let payload_masses = r.map(e=>e.rocket.second_stage.payloads[0].payload_mass_kg);
       let success = r.map(e=>e.launch_success);
 
-      console.log(this.state.key);
-      this.setState({
-        names: names,
-        launch_sites: launch_sites,
-        patchUrls: patchUrls,
-        datesUNIX: datesUNIX,
-        details: details,
-        videoUrls: videoUrls,
-        primary_payloads: primary_payloads,
-        orbits: orbits,
-        payload_masses: payload_masses,
-        success: success,
+      let allRecords = [];
+      for (let i=0;i<names.length;i++){
+        let record = {
+          id: i,
+          name: names[i],
+          date: datesUNIX[i],
+          patchUrl: patchUrls[i],
+          launchSite: launch_sites[i],
+          details: details[i],
+          videoUrl: videoUrls[i],
+          primary_payload: primary_payloads[i],
+          orbit: orbits[i],
+          payload_mass: payload_masses[i],
+          success: success[i],
+        };
+        allRecords.push(record);
+      }
 
-      });
-      console.log('database built correctly!');
+      this.setState({database: allRecords, filteredDatabase: allRecords});
+
     } catch (err) {console.log('Looks like somethings wrong...',err)}
 
 
@@ -106,11 +101,15 @@ class App extends Component {
   searchFunction = (event) => {
     switch (this.state.viewMode){
       case 'missions':
-      console.log(this.state.names);
-        let filteredNames = this.state.names.filter((e)=>e.toLowerCase().includes(event.target.value.toLowerCase()))
-        this.setState({filteredNames: filteredNames});
-        console.log(filteredNames);
-        break;
+        let filteredList = [];
+        let n;
+          for (n of this.state.database) {
+            if (n.name.toLowerCase().includes(event.target.value)){
+              filteredList.push(n);
+            }
+          }
+          this.setState({filteredDatabase: filteredList});
+          break;
       default: return null;
 
     }
@@ -128,7 +127,7 @@ class App extends Component {
                  currentView={this.state.viewMode}
       />
       <SearchBar back={this.goBack} search={this.searchFunction}/>
-      <LookupViewer database={this.state} resourceClick={this.resourceClick}/>
+      <LookupViewer allData={this.state} resourceClick={this.resourceClick}/>
     </div>
   )
 }
