@@ -96,6 +96,10 @@ class App extends Component {
     this.setState({resourceRequested: id, isInfoView: true});
   }
 
+  goBack = () => {
+    this.setState({isInfoView: false});
+  }
+
   render(){
   return (
     <div className="App scroll-parent">
@@ -107,7 +111,7 @@ class App extends Component {
                  onUpcomingSearchClick={this.onUpcomingSearchClick}
                  currentView={this.state.viewMode}
       />
-      <SearchBar />
+      <SearchBar back={this.goBack}/>
       <LookupViewer database={this.state} resourceClick={this.resourceClick}/>
     </div>
   )
