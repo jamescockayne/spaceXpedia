@@ -9,8 +9,10 @@ import LookupViewer from '../LookupViewer/LookupViewer';
 class App extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       viewMode: 'missions',
+      database: [],
       isInfoView: false,
       resourceRequested: '',
       names: [],
@@ -49,8 +51,27 @@ class App extends Component {
       let payload_masses = r.map(e=>e.rocket.second_stage.payloads[0].payload_mass_kg);
       let success = r.map(e=>e.launch_success);
 
-      console.log(this.state.key);
+      let allRecords = [];
+      for (let i=0;i<names.length;i++){
+        let record = {
+          id: i,
+          name: names[i],
+          date: datesUNIX[i],
+          patchUrl: patchUrls[i],
+          launchSite: launch_sites[i],
+          details: details[i],
+          videoUrl: videoUrls[i],
+          primary_payload: primary_payloads[i],
+          orbit: orbits[i],
+          payload_mass: payload_masses[i],
+          success: success[i],
+        };
+        allRecords.push(record);
+      }
+
+      console.log(allRecords);
       this.setState({
+        database: allRecords,
         names: names,
         launch_sites: launch_sites,
         patchUrls: patchUrls,
@@ -64,6 +85,7 @@ class App extends Component {
 
       });
       console.log('database built correctly!');
+      console.log(this.state.database);
     } catch (err) {console.log('Looks like somethings wrong...',err)}
 
 
