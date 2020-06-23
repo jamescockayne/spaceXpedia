@@ -14,6 +14,7 @@ class App extends Component {
       isInfoView: false,
       resourceRequested: '',
       names: [],
+      filteredNames: [],
       launch_sites: [],
       patchUrls: [],
       datesUNIX: [],
@@ -37,6 +38,7 @@ class App extends Component {
     try{
       let r = await this.fetchLaunchData();
       let names = r.map(e=>e.mission_name);
+      let key = r.map((e,i)=>i);
       let launch_sites = r.map(e=>e.launch_site.site_name_long);
       let patchUrls = r.map(e=>e.links.mission_patch_small);
       let datesUNIX = r.map(e=>e.launch_date_unix);
@@ -47,6 +49,7 @@ class App extends Component {
       let payload_masses = r.map(e=>e.rocket.second_stage.payloads[0].payload_mass_kg);
       let success = r.map(e=>e.launch_success);
 
+      console.log(this.state.key);
       this.setState({
         names: names,
         launch_sites: launch_sites,
@@ -96,6 +99,23 @@ class App extends Component {
     this.setState({resourceRequested: id, isInfoView: true});
   }
 
+  goBack = () => {
+    this.setState({isInfoView: false});
+  }
+
+  searchFunction = (event) => {
+    switch (this.state.viewMode){
+      case 'missions':
+      console.log(this.state.names);
+        let filteredNames = this.state.names.filter((e)=>e.toLowerCase().includes(event.target.value.toLowerCase()))
+        this.setState({filteredNames: filteredNames});
+        console.log(filteredNames);
+        break;
+      default: return null;
+
+    }
+  }
+
   render(){
   return (
     <div className="App scroll-parent">
@@ -107,7 +127,7 @@ class App extends Component {
                  onUpcomingSearchClick={this.onUpcomingSearchClick}
                  currentView={this.state.viewMode}
       />
-      <SearchBar />
+      <SearchBar back={this.goBack} search={this.searchFunction}/>
       <LookupViewer database={this.state} resourceClick={this.resourceClick}/>
     </div>
   )
