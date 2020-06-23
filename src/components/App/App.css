@@ -6,6 +6,10 @@ html {
   text-align: center;
 }
 
-.scroll-child {
+{/*}.scroll-child {
+ scroll-snap-align: start;
+}*/}
+
+.bottom-scroll {
   scroll-snap-align: start;
 }

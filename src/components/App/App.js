@@ -104,7 +104,7 @@ class App extends Component {
         let filteredList = [];
         let n;
           for (n of this.state.database) {
-            if (n.name.toLowerCase().includes(event.target.value)){
+            if (n.name.toLowerCase().includes(event.target.value.toLowerCase())){
               filteredList.push(n);
             }
           }
@@ -126,8 +126,9 @@ class App extends Component {
                  onUpcomingSearchClick={this.onUpcomingSearchClick}
                  currentView={this.state.viewMode}
       />
-      <SearchBar back={this.goBack} search={this.searchFunction}/>
+
       <LookupViewer allData={this.state} resourceClick={this.resourceClick}/>
+      <SearchBar back={this.goBack} search={this.searchFunction}/>
     </div>
   )
 }

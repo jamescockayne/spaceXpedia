@@ -11,7 +11,7 @@ class ViewWindow extends Component {
   render(){
     return (
       <section id='view'>
-        <div className='view-window-container'>
+        <div className='view-window-container bottom-scroll'>
           <div className='view-display'>
             {this.props.children}
           </div>
