@@ -6,10 +6,10 @@ const SearchBar = (props) => {
     <section id='search-bar'>
       <div className='search-bar-container'>
         <div className='search-container'>
-          Search Bar
+          <input type='text' onChange={props.search} placeholder='Search...'/>
         </div>
         <div className='back-button-container'>
-          <button onClick={props.back}className='back-button'>Go Back!</button>
+          <button onClick={props.back} className='back-button'>Go Back!</button>
         </div>
       </div>
     </section>
