@@ -120,15 +120,14 @@ class App extends Component {
     <div className="App scroll-parent">
       <Countdown />
       <LaunchInformation />
+      <LookupViewer allData={this.state} back={this.goBack} resourceClick={this.resourceClick}/>
       <NavBar onMissionSearchClick={this.onMissionSearchClick}
                  onCoresSearchClick={this.onCoresSearchClick}
                  onPayloadsSearchClick={this.onPayloadsSearchClick}
                  onUpcomingSearchClick={this.onUpcomingSearchClick}
                  currentView={this.state.viewMode}
+                 search={this.searchFunction}
       />
-
-      <LookupViewer allData={this.state} resourceClick={this.resourceClick}/>
-      <SearchBar back={this.goBack} search={this.searchFunction}/>
     </div>
   )
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import CardBoard from '../CardBoard/CardBoard';
 import ViewWindow from '../ViewWindow/ViewWindow';
 import DetailWindow from '../DetailWindow/DetailWindow';
+import BackButton from '../BackButton/BackButton';
+import '../../styles/BackButton.css';
 
 const LookupViewer = (props) => {
 
@@ -14,9 +16,12 @@ const LookupViewer = (props) => {
   }
   else{
     return (
+      <>
       <ViewWindow>
-       <DetailWindow state={props.allData}/>
+       <DetailWindow state={props.allData} back={props.back}/>
       </ViewWindow>
+
+       </>
     )
   }
 }
