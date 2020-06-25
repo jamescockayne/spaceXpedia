@@ -24,6 +24,16 @@ class App extends Component {
     this.buildDatabase();
   }
 
+  getId = (url) => {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+        return match[2];
+    } else {
+        return 'error';
+    }
+}
 
   buildDatabase = async () => {
     try{
@@ -54,6 +64,9 @@ class App extends Component {
           payload_mass: payload_masses[i],
           success: success[i],
         };
+        record.videoUrl = `https://www.youtube.com/embed/${this.getId(record.videoUrl)}`;
+        
+        if (record.details === null){record.details = 'None Available'}
         allRecords.push(record);
       }
 
@@ -120,15 +133,14 @@ class App extends Component {
     <div className="App scroll-parent">
       <Countdown />
       <LaunchInformation />
+      <LookupViewer allData={this.state} back={this.goBack} resourceClick={this.resourceClick}/>
       <NavBar onMissionSearchClick={this.onMissionSearchClick}
                  onCoresSearchClick={this.onCoresSearchClick}
                  onPayloadsSearchClick={this.onPayloadsSearchClick}
                  onUpcomingSearchClick={this.onUpcomingSearchClick}
                  currentView={this.state.viewMode}
+                 search={this.searchFunction}
       />
-
-      <LookupViewer allData={this.state} resourceClick={this.resourceClick}/>
-      <SearchBar back={this.goBack} search={this.searchFunction}/>
     </div>
   )
 }

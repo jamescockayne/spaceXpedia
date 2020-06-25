@@ -1,20 +1,16 @@
 .search-bar-container {
-  width: 100%;
-  height: 7vh;
-  display: flex;
+  height: stretch;
 }
-
 .search-container {
-  width: 85vw;
-  height: 7vh;
+  height: 100%;
 }
 
-.back-button-container {
-  width: 15vw;
+.search-input {
   height: 7vh;
+  width: stretch;
 }
 
-.back-button{
-height: 7vh;
-background-color: red;
+
+@media (min-width: 550px) {
+  .search-input {height: 14vh; font-size: 7vh}
 }
