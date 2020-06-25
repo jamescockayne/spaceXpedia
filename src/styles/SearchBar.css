@@ -10,15 +10,6 @@
   width: stretch;
 }
 
-.back-button-container {
-  width: 100%;
-  height: 7vh;
-}
-
-.back-button{
-height: 7vh;
-background-color: red;
-}
 
 @media (min-width: 550px) {
   .search-input {height: 14vh; font-size: 7vh}

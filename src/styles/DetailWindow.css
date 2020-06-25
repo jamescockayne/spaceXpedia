@@ -8,3 +8,7 @@ img {
   max-width: 30vh;
   margin: 3vh 3vh;
 }
+
+.subtitle {
+  font-size: 10px
+}

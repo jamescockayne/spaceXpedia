@@ -1,13 +1,12 @@
 .back-button-container {
   width: 100%;
   height: 7vh;
+  grid-column-start: 3;
+
 }
 
 .back-button{
 height: 7vh;
 background-color: red;
-}
-
-.fixed {
-  
+width: 100%
 }
