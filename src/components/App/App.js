@@ -3,7 +3,6 @@ import './App.css';
 import Countdown from '../Countdown/Countdown';
 import LaunchInformation from '../LaunchInformation/LaunchInformation';
 import NavBar from '../NavBar/NavBar';
-import SearchBar from '../SearchBar/SearchBar';
 import LookupViewer from '../LookupViewer/LookupViewer';
 
 class App extends Component {
@@ -65,7 +64,7 @@ class App extends Component {
           success: success[i],
         };
         record.videoUrl = `https://www.youtube.com/embed/${this.getId(record.videoUrl)}`;
-        
+
         if (record.details === null){record.details = 'None Available'}
         allRecords.push(record);
       }

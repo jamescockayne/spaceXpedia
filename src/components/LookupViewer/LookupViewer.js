@@ -2,7 +2,6 @@ import React from 'react';
 import CardBoard from '../CardBoard/CardBoard';
 import ViewWindow from '../ViewWindow/ViewWindow';
 import DetailWindow from '../DetailWindow/DetailWindow';
-import BackButton from '../BackButton/BackButton';
 import '../../styles/BackButton.css';
 
 const LookupViewer = (props) => {
