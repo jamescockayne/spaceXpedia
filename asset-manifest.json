@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/spaceXpedia/static/css/main.b478fcc1.chunk.css",
-    "main.js": "/spaceXpedia/static/js/main.65b8d85e.chunk.js",
-    "main.js.map": "/spaceXpedia/static/js/main.65b8d85e.chunk.js.map",
+    "main.js": "/spaceXpedia/static/js/main.96450695.chunk.js",
+    "main.js.map": "/spaceXpedia/static/js/main.96450695.chunk.js.map",
     "runtime-main.js": "/spaceXpedia/static/js/runtime-main.35a29c35.js",
     "runtime-main.js.map": "/spaceXpedia/static/js/runtime-main.35a29c35.js.map",
     "static/css/2.3c03f26f.chunk.css": "/spaceXpedia/static/css/2.3c03f26f.chunk.css",
     "static/js/2.9f72906b.chunk.js": "/spaceXpedia/static/js/2.9f72906b.chunk.js",
     "static/js/2.9f72906b.chunk.js.map": "/spaceXpedia/static/js/2.9f72906b.chunk.js.map",
     "index.html": "/spaceXpedia/index.html",
-    "precache-manifest.af8997081a9a0ad5a6c8946f748c3a59.js": "/spaceXpedia/precache-manifest.af8997081a9a0ad5a6c8946f748c3a59.js",
+    "precache-manifest.e3d2da910956bec1997f9f1c01a79400.js": "/spaceXpedia/precache-manifest.e3d2da910956bec1997f9f1c01a79400.js",
     "service-worker.js": "/spaceXpedia/service-worker.js",
     "static/css/2.3c03f26f.chunk.css.map": "/spaceXpedia/static/css/2.3c03f26f.chunk.css.map",
     "static/css/main.b478fcc1.chunk.css.map": "/spaceXpedia/static/css/main.b478fcc1.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.3c03f26f.chunk.css",
     "static/js/2.9f72906b.chunk.js",
     "static/css/main.b478fcc1.chunk.css",
-    "static/js/main.65b8d85e.chunk.js"
+    "static/js/main.96450695.chunk.js"
   ]
 }
