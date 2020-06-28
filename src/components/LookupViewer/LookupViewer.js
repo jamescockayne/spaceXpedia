@@ -19,6 +19,7 @@ const LookupViewer = (props) => {
       <ViewWindow>
        <DetailWindow state={props.allData} back={props.back}/>
       </ViewWindow>
+      {document.getElementsByClassName('view-display')[0].scrollTo(0,0)}
 
        </>
     )

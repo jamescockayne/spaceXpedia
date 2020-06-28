@@ -32,9 +32,11 @@ const DetailWindow = (props) => {
         Launch Information: {requestedRecord.details}
         <br/>
         <br/>
-        <iframe frameBorder='0' src={requestedRecord.videoUrl} allowFullScreen></iframe>
-      </p>
 
+      </p>
+      <div className='youtube-video'>
+        <iframe style={{width: '100%', height: '100%'}} frameBorder='0' src={requestedRecord.videoUrl} allowFullScreen></iframe>
+      </div>
 
 
     </div>
