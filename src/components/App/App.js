@@ -37,16 +37,17 @@ class App extends Component {
   buildDatabase = async () => {
     try{
       let r = await this.fetchLaunchData();
+      console.log(r);
       let names = r.map(e=>e.mission_name);
-      let launch_sites = r.map(e=>e.launch_site.site_name_long);
+      //let launch_sites = r.map(e=>e.launch_site.site_name_long);
       let patchUrls = r.map(e=>e.links.mission_patch_small);
-      let datesUNIX = r.map(e=>e.launch_date_unix);
+      let datesUNIX = r.map(e=>e.date_unix);
       let details = r.map(e=>e.details);
       let videoUrls = r.map(e=>e.links.video_link);
-      let primary_payloads = r.map(e=>e.rocket.second_stage.payloads[0].payload_id);
-      let orbits = r.map(e=>e.rocket.second_stage.payloads[0].orbit);
-      let payload_masses = r.map(e=>e.rocket.second_stage.payloads[0].payload_mass_kg);
-      let success = r.map(e=>e.launch_success);
+      //let primary_payloads = r.map(e=>e.rocket.second_stage.payloads[0].payload_id);
+      //let orbits = r.map(e=>e.rocket.second_stage.payloads[0].orbit);
+      //let payload_masses = r.map(e=>e.rocket.second_stage.payloads[0].payload_mass_kg);
+      //let success = r.map(e=>e.launch_success);
 
       let allRecords = [];
       for (let i=0;i<names.length;i++){
@@ -55,13 +56,13 @@ class App extends Component {
           name: names[i],
           date: datesUNIX[i],
           patchUrl: patchUrls[i],
-          launchSite: launch_sites[i],
+          //launchSite: launch_sites[i],
           details: details[i],
           videoUrl: videoUrls[i],
-          primary_payload: primary_payloads[i],
-          orbit: orbits[i],
-          payload_mass: payload_masses[i],
-          success: success[i],
+          //primary_payload: primary_payloads[i],
+          //orbit: orbits[i],
+          //payload_mass: payload_masses[i],
+          //success: success[i],
         };
         record.videoUrl = `https://www.youtube.com/embed/${this.getId(record.videoUrl)}`;
 
@@ -80,7 +81,7 @@ class App extends Component {
 
 
   fetchLaunchData = async () => {
-    const response = await fetch('https://api.spacexdata.com/v3/launches/past');
+    const response = await fetch('https://api.spacexdata.com/v4/launches/past');
     const data = await response.json();
     return data;
   }

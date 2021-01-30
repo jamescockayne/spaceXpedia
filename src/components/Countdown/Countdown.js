@@ -45,12 +45,13 @@ class Countdown extends Component {
     // Say whether the component is mounted and request the data from API
     console.log(`Countdown component mounted successfully!`);
     const data = this.fetchLaunchData();
+    console.log(data)
 
 
     // When the data is recieved, update the state...
     data.then(result => {
-    let date = new Date(result.launch_date_unix*1000);
-    this.setState({nameOfNextLaunch: result.mission_name, nextLaunchTimeUnix: result.launch_date_unix, dateString: date.toString(),});
+    let date = new Date(result.date_unix*1000);
+    this.setState({nameOfNextLaunch: result.name, nextLaunchTimeUnix: result.date_unix, dateString: date.toString(),});
       }).catch(e=>console.log(e));
 
     // ...and then continuusly work out the 't-minus' time to launch, updating the state everytime it changes
@@ -93,7 +94,7 @@ class Countdown extends Component {
   }
 
   fetchLaunchData = async () => {
-    const response = await fetch('https://api.spacexdata.com/v3/launches/next');
+    const response = await fetch('https://api.spacexdata.com/v4/launches/next');
     const data = await response.json();
     return data;
   }
